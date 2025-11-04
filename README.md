@@ -8,10 +8,11 @@
 
 <p align = "center">
   <a href = "#sobre"> Sobre </a>  |  
+  <a href = "#relatorio"> Relatório </a>  |  
   <a href = "#tecnologias"> Tecnologias </a>  | 
   <a href = "#prototipo"> Protótipo </a> |
-  <a href = "#funcionalidades"> Funcionalidades </a>  |
-  <a href = "#executar"> Instalação </a>
+  <a href = "#funcionalidades"> Funcionalidades </a>  |
+  <a href = "#executar"> Instalação </a>
 </p>
 
 > **Status do projeto:** Concluído ✅
@@ -23,6 +24,23 @@
 O **Aeronaves GUI** é um sistema web desenvolvido em **React + TypeScript + Vite**, com o objetivo de **gerenciar aeronaves, peças e relatórios de produção** em uma interface gráfica moderna e intuitiva.  
 
 O sistema apresenta **dashboard com gráficos interativos**, exibição de **estatísticas de produção e desempenho**, além de **integração visual consistente** com um layout responsivo.
+
+---
+
+## 📄 Relatório de Planejamento
+<a id="relatorio"></a>
+
+Antes do desenvolvimento deste protótipo, foi elaborada uma documentação de projeto contendo:
+
+* **Análise de Requisitos:** Definição dos requisitos funcionais (RFs) da aplicação, baseados no sistema CLI original.
+* **Wireframes:** Esboços de baixa fidelidade (low-fidelity) de todas as telas principais.
+* **Fluxo de Navegação:** Um diagrama de "wireflow" detalhando a jornada do usuário engenheiro através da interface.
+
+<div align="center">
+  <a href="docs/Relatório - GUI AEROCODE.pdf" target="_blank">
+    <img src="https://img.shields.io/badge/Acessar_Relatório_Completo-PDF-e74c3c?style=for-the-badge&logo=adobeacrobatreader">
+  </a>
+</div>
 
 ---
 
