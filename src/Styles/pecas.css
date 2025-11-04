@@ -1,0 +1,21 @@
+.status-pill {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #fff;
+  margin-top: 10px;
+}
+
+.status-pill.pronta {
+  background-color: #28a745;
+}
+
+.status-pill.producao {
+  background-color: #ffc107;
+}
+
+.status-pill.transporte {
+  background-color: #17a2b8;
+}
