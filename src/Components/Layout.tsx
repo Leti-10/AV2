@@ -1,24 +1,40 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { Outlet, Link, useNavigate } from 'react-router-dom';
-import { GiHamburgerMenu, GiAirplaneDeparture  } from 'react-icons/gi';
+import { GiHamburgerMenu, GiAirplaneDeparture } from 'react-icons/gi';
 import { IoMdClose } from 'react-icons/io';
 import { FaUserCircle } from 'react-icons/fa';
-import '../Styles/Aero.css';
+import '../Styles/Aero.css'; 
 
 function Layout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isUserMenuOpen, setIsUserMenuOpen] = useState(false); 
   const navigate = useNavigate();
+  const userMenuRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    function handleClickOutside(event: MouseEvent) {
+      if (userMenuRef.current && !userMenuRef.current.contains(event.target as Node)) {
+        setIsUserMenuOpen(false);
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [userMenuRef]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);
   };
 
   const handleLogout = () => {
+    setIsUserMenuOpen(false);
     navigate('/');
   };
 
   return (
     <div className={`layout ${isSidebarOpen ? 'sidebar-open' : 'sidebar-closed'}`}>
+      
       <aside className="sidebar">
         <div className="logo-sidebar">
           <div className="logo-brand">
@@ -30,7 +46,7 @@ function Layout() {
 
         <nav className="sidebar-nav">
           <ul>
-            <li><Link to="/admin/dashboard">Visão Geral </Link></li>
+            <li><Link to="/admin/dashboard">Visão Geral</Link></li>
             <li><Link to="/admin/aeronaves">Aeronaves</Link></li>
             <li><Link to="/admin/pecas">Peças</Link></li>
             <li><Link to="/admin/testes">Testes</Link></li>
@@ -38,23 +54,32 @@ function Layout() {
             <li><Link to="/admin/relatorios">Relatórios</Link></li>
           </ul>
         </nav>
-
-        <div className="sidebar-footer">
-          <div className="user-profile-sidebar">
-            <FaUserCircle className="user-icon" />
-            <span className="user-name">Admin User</span>
-          </div>
-          <button className="sair-button" onClick={handleLogout}>
-            Sair
-          </button>
-        </div>
+        <div className="sidebar-footer-empty"></div>
       </aside>
 
       <div className="main-content-wrapper">
         <header className="app-header">
-          <GiHamburgerMenu className="icon-open" onClick={toggleSidebar} />
-          <h2></h2>
+          <div className="header-left-section">
+            <GiHamburgerMenu className="icon-open" onClick={toggleSidebar} />
+          </div>
+          <div className="header-right-section">
+            <div className="header-user-profile" ref={userMenuRef}>
+              <div className="user-profile-toggle" onClick={() => setIsUserMenuOpen(!isUserMenuOpen)}>
+                <FaUserCircle className="user-icon" />
+                <span className="user-name">Admin User</span>
+              </div>
+              {isUserMenuOpen && (
+                <div className="user-dropdown-menu">
+                  <button className="sair-button-dropdown" onClick={handleLogout}>
+                    Sair
+                  </button>
+                </div>
+              )}
+            </div>
+          </div>
+
         </header>
+        
         <main className="app-content">
           <Outlet />
         </main>

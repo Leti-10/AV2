@@ -42,7 +42,7 @@
   border-color: #0078b0;
 }
 
-.button-rel {
+.button-rel1 {
   background-color: #004b70;
   color: white;
   border: none;
@@ -54,15 +54,8 @@
   transition: all 0.2s ease;
 }
 
-.button-rel:hover {
+.button-rel1:hover {
   background-color: #016aa3;
-  transform: translateY(-2px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
-}
-
-.button-rel:active {
-  transform: translateY(0);
-  box-shadow: none;
 }
 
 .report-section {
@@ -82,37 +75,63 @@
   color: #555;
 }
 
-.table-relatorios {
-  width: 100%;
-  border-collapse: collapse;
+.report-card-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
   margin-top: 15px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
 }
 
-.table-relatorios th,
-.table-relatorios td {
+.report-card {
+  background-color: #f9f9f9;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+}
+
+.report-card-header {
   padding: 12px 16px;
-  text-align: left;
+  background-color: #f1faff;
   border-bottom: 1px solid #eee;
 }
 
-.table-relatorios th {
-  background-color: #004b70;
-  color: #fff;
-  font-weight: 600;
+.report-card-header h3 {
+  color: #004b70;
+  margin-bottom: 4px;
+  font-size: 1.1rem;
 }
 
-.table-relatorios td {
-  background-color: #fff;
+.report-card-header span {
+  font-size: 0.8rem;
+  color: #555;
 }
 
-.table-relatorios tr:hover td {
-  background-color: #f1faff;
+.report-card-body {
+  padding: 16px;
+  flex-grow: 1;
 }
 
-.table-relatorios td button {
+.report-card-body p {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.report-card-body p strong {
+  color: #000;
+}
+
+.report-card-footer {
+  padding: 12px 16px;
+  background-color: #f9f9f9;
+  border-top: 1px solid #eee;
+  text-align: right;
+}
+
+.button-rel {
   background-color: #0078b0;
   color: white;
   border: none;
@@ -123,6 +142,6 @@
   transition: background 0.2s ease;
 }
 
-.table-relatorios td button:hover {
+.button-rel:hover {
   background-color: #0098da;
 }
