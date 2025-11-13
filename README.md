@@ -53,29 +53,6 @@ Antes do desenvolvimento deste protótipo, foi elaborada uma documentação de p
 
 ---
 
-## 📸 Protótipo / Interface
-<a id="prototipo"></a>
-
-<div align="center">
-<table>
-  <tr>
-    <th><img src="docs/Captura de tela 2025-11-03 221145.png" alt="Dashboard"></th>
-    <th><img src="docs/aerocode 3.png" alt="Gerenciamento de Peças"></th>
-    <th><img src="docs/aerocode 2.png" alt="Modal de Cadastro"></th>
-    <th><img src="docs/aerocode 1.png" alt="Modal de Cadastro"></th>
-    
-  </tr>
-  <tr>
-    <td align="center">Dashboard</td>
-    <td align="center">Cadastro de Aeronaves</td>
-    <td align="center">Kanban Testes</td>
-    <td align="center">Gestão de funcionários</td>
-  </tr>
-</table>
-</div>
-
----
-
 ## 💻 Funcionalidades
 <a id="funcionalidades"></a>
 
