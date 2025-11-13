@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Modal from '../Components/Modal';
+import ModalAeronave from '../Components/Modal';
 import '../styles/Aero.css';
 
 
@@ -46,7 +46,7 @@ function ListarAero() {
         ))}
       </div>
 
-      {isModalOpen && <Modal onClose={() => setIsModalOpen(false)} />}
+      {isModalOpen && <ModalAeronave onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 }
